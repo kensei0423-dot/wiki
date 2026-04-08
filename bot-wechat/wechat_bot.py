@@ -112,9 +112,10 @@ def send_reply(chat_id, text):
 
 
 def send_reply_to_user(user_id, text):
-    """备用：直接回复用户（非群聊场景）"""
+    """回复用户"""
     token = get_access_token()
-    requests.post(
+    print(f"[DEBUG] access_token: {token[:10]}... user: {user_id}")
+    resp = requests.post(
         f"{BASE_URL}/message/send",
         params={"access_token": token},
         json={
@@ -124,6 +125,7 @@ def send_reply_to_user(user_id, text):
             "text": {"content": text},
         },
     )
+    print(f"[DEBUG] send result: {resp.json()}")
 
 
 # ====== 匹配问答 ======
