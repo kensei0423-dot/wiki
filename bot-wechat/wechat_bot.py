@@ -11,11 +11,11 @@ import requests
 from Crypto.Cipher import AES
 
 # ====== 配置 ======
-CORP_ID = os.environ.get("WECHAT_CORP_ID", "你的企业ID")
-AGENT_ID = os.environ.get("WECHAT_AGENT_ID", "你的AgentID")
-SECRET = os.environ.get("WECHAT_SECRET", "你的Secret")
-TOKEN = os.environ.get("WECHAT_TOKEN", "你的Token")
-ENCODING_AES_KEY = os.environ.get("WECHAT_ENCODING_AES_KEY", "你的EncodingAESKey")
+CORP_ID = os.environ.get("WECHAT_CORP_ID", "ww69cc47dd4dda0fd2")
+AGENT_ID = os.environ.get("WECHAT_AGENT_ID", "1000002")
+SECRET = os.environ.get("WECHAT_SECRET", "rzMDhXFJ33u1jyWqV5VEmsOgyVbDYgwCajyzOj356po")
+TOKEN = os.environ.get("WECHAT_TOKEN", "umdBc7cmOI6F")
+ENCODING_AES_KEY = os.environ.get("WECHAT_ENCODING_AES_KEY", "X8uPufbdGb1xlVIP0F3bLwYJeFSGRiglQCdLB6BuXKE")
 
 BASE_URL = "https://qyapi.weixin.qq.com/cgi-bin"
 
