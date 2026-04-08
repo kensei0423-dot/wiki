@@ -42,12 +42,15 @@
 
 ## PayPal SDK 对比
 
-| 特性 | SDK v6 (主用) | Classic SDK |
-|------|--------------|-------------|
-| 按钮样式 | 自定义 HTML 按钮 | PayPal 标准金色按钮 |
-| 触发方式 | Headless，代码触发 | 点击 PayPal 按钮 |
-| Vault 支持 | vault-with-purchase | id_token |
-| 适用场景 | 品牌一致性要求高 | 快速集成 |
+| 特性 | SDK v6 (主用) | Classic SDK | V6 官方 Quick Start |
+|------|--------------|-------------|---------------------|
+| 按钮样式 | 自定义 HTML 按钮 | PayPal 标准金色按钮 | `<paypal-button>` Web Component |
+| 触发方式 | Headless，代码触发 | 点击 PayPal 按钮 | Web Component + click 事件 |
+| Vault 支持 | vault-with-purchase | id_token | 未包含 |
+| 适用场景 | 品牌一致性要求高 | 快速集成 | 最小化 PoC |
+| 服务端 SDK | 原生 fetch | 原生 fetch | @paypal/checkout-server-sdk |
+
+> 详见 [[paypal-v6-quickstart]] — 官方 V6 SDK 快速集成指南
 
 ## 数据流
 
@@ -64,3 +67,4 @@
 - [[overview]] — 项目概览
 - [[payment-flows]] — 详细支付流程
 - [[api-reference]] — API 端点列表
+- [[paypal-v6-quickstart]] — 官方 V6 SDK 快速集成指南

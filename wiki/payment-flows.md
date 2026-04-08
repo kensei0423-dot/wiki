@@ -105,9 +105,25 @@
 - **取消订阅**: 二次确认 + 2% 留存优惠
 - **续费**: 周卡自动续费享 5% 折扣
 
+## 官方 V6 Quick Start 对比
+
+官方推荐的最小集成使用 `<paypal-button>` Web Component，而 ReelShort 使用自定义 HTML 按钮（headless 模式）。两者核心 API 调用相同（Create → Approve → Capture），区别在于前端触发方式和功能丰富度。
+
+| 对比项 | 官方 Quick Start | ReelShort |
+|--------|-----------------|-----------|
+| 前端按钮 | `<paypal-button>` | 自定义 HTML |
+| Intent | CAPTURE 或 AUTHORIZE | CAPTURE |
+| Vault | 未包含 | vault-with-purchase |
+| Shipping | 支持 3 种模式 | NO_SHIPPING（数字商品） |
+| 错误处理 | 基础 5 种 | 7 大类 200+ 错误码 |
+| 上线监控 | 提供指标建议 | 自建统计 |
+
+详见 [[paypal-v6-quickstart]]。
+
 ## 相关页面
 
 - [[architecture]] — 系统架构
 - [[error-handling]] — 支付错误处理
 - [[api-reference]] — API 端点
 - [[testing]] — 错误测试
+- [[paypal-v6-quickstart]] — 官方 V6 SDK 快速集成指南

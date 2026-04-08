@@ -17,6 +17,7 @@
 |------|------|
 | [[wiki/payment-flows]] | 5 种支付流程详解（新用户/回头客/信用卡） |
 | [[wiki/vault-system]] | 支付方式保存与免弹窗复用 |
+| [[wiki/paypal-v6-quickstart]] | PayPal V6 SDK 官方快速集成指南、上线清单、监控指标 |
 
 ### 系统
 

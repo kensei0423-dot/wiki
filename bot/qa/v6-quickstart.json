@@ -1,0 +1,34 @@
+[
+  {
+    "keywords": ["quick start", "快速集成", "最小集成", "quickstart", "快速接入"],
+    "answer": "PayPal V6 SDK 最小集成 3 步：\n1. 创建订单：服务端 POST /v2/checkout/orders\n2. 买家批准：前端 SDK 渲染按钮，用户点击支付\n3. 捕获支付：服务端 POST /v2/checkout/orders/:id/capture\n\n依赖：express + @paypal/checkout-server-sdk + dotenv\nSDK 脚本：https://www.sandbox.paypal.com/web-sdk/v6/core"
+  },
+  {
+    "keywords": ["intent", "CAPTURE", "AUTHORIZE", "授权"],
+    "answer": "PayPal 订单两种 Intent：\n- CAPTURE：买家批准后立即扣款，适合即时交付\n- AUTHORIZE：先授权后扣款，29 天有效，适合确认库存后再扣款\n\nReelShort 使用 CAPTURE 模式。"
+  },
+  {
+    "keywords": ["shipping", "物流", "地址", "shipping_preference"],
+    "answer": "Shipping 配置 3 种模式：\n- GET_FROM_FILE（默认）：用买家 PayPal 账户地址\n- SET_FROM_PROVIDER：商户提供地址，买家不可改\n- NO_SHIPPING：数字商品无需物流\n\nReelShort 作为数字内容平台，应使用 NO_SHIPPING。"
+  },
+  {
+    "keywords": ["negative testing", "错误模拟", "mock", "模拟测试"],
+    "answer": "Negative Testing（仅 Sandbox）：\n通过 PayPal-Mock-Response header 触发：\n- INSUFFICIENT_FUNDS — 余额不足\n- INSTRUMENT_DECLINED — 支付方式被拒\n- INTERNAL_SERVER_ERROR — 服务器错误\n- TRANSACTION_REFUSED — 交易被拒\n- DUPLICATE_INVOICE_ID — 重复发票\n\n启用：.env 中设 ENABLE_NEGATIVE_TESTING=true"
+  },
+  {
+    "keywords": ["上线", "go live", "上线清单", "生产环境", "production"],
+    "answer": "PayPal 上线清单：\n1. Sandbox 测试所有场景\n2. .env 切换到 Production 配置\n3. 前端 Client ID 切换到生产\n4. 配置 HTTPS 证书\n5. 用 $1 真实交易测试\n6. 确认 PayPal 账户收到资金"
+  },
+  {
+    "keywords": ["监控", "指标", "成功率", "monitor"],
+    "answer": "上线后监控指标建议：\n- 支付成功率：目标 95%（低于则检查 API 错误日志）\n- 取消率：目标 <20%（高于则优化结账 UX）\n- 错误率：目标 <2%（高于则检查错误日志）\n- 创建订单响应：目标 <2s\n- 捕获响应：目标 <3s"
+  },
+  {
+    "keywords": ["paypal-button", "web component", "按钮组件"],
+    "answer": "V6 SDK 官方按钮用法：\n1. createInstance({ clientId, components: ['paypal-payments'] })\n2. findEligibleMethods() 检查资格\n3. 创建 <paypal-button> Web Component\n4. createPayPalOneTimePaymentSession({ onApprove, onCancel, onError })\n5. 点击时调用 session.start()\n\n注意：createOrder() 不要 await，直接传 Promise 给 start()。"
+  },
+  {
+    "keywords": ["环境变量", ".env", "配置", "client id", "secret"],
+    "answer": "PayPal 环境配置（.env 文件）：\n\nSandbox（开发）：\n- PAYPAL_CLIENT_ID=sandbox_id\n- PAYPAL_CLIENT_SECRET=sandbox_secret\n- NODE_ENV=development\n\nProduction（生产）：\n- PAYPAL_CLIENT_ID=production_id\n- PAYPAL_CLIENT_SECRET=production_secret\n- NODE_ENV=production\n\n重要：永远不要硬编码凭证，.env 不要提交到 Git。"
+  }
+]

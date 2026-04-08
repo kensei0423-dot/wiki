@@ -20,7 +20,7 @@
 - package.json — 项目依赖
 - cookies.txt — 测试会话 cookie
 
-**生成的 wiki 页面** (8 个):
+**生成的 wiki 页面** (9 个):
 - overview.md — 项目概览
 - architecture.md — 系统架构
 - payment-flows.md — 支付流程
@@ -30,3 +30,15 @@
 - api-reference.md — API 参考
 - error-handling.md — 错误处理
 - testing.md — 测试方案
+
+## [2026-04-08] ingest | PayPal V6 SDK Quick Start 官方文档
+
+摄入 PayPal 官方 V6 SDK 快速集成文档（docs.paypal.ai）。
+
+**新增页面**:
+- paypal-v6-quickstart.md — 官方最小集成指南、Intent 模式、Shipping 配置、Negative Testing、上线清单、监控指标、与 ReelShort 实现对比
+
+**更新页面** (3 个):
+- architecture.md — SDK 对比表新增 V6 Quick Start 列，添加交叉引用
+- payment-flows.md — 新增官方 Quick Start 对比章节，添加交叉引用
+- index.md — 索引新增 paypal-v6-quickstart 条目
