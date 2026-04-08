@@ -158,13 +158,24 @@ def webhook():
 
     # POST: 接收消息
     raw_data = request.data.decode("utf-8")
-    xml_msg = crypt.decrypt_msg(raw_data, msg_signature, timestamp, nonce)
-    if not xml_msg:
+    print(f"[DEBUG] raw_data: {raw_data[:200]}")
+
+    try:
+        xml_msg = crypt.decrypt_msg(raw_data, msg_signature, timestamp, nonce)
+    except Exception as e:
+        print(f"[ERROR] decrypt failed: {e}")
         return "decrypt failed", 400
+
+    if not xml_msg:
+        print("[ERROR] decrypt returned None")
+        return "decrypt failed", 400
+
+    print(f"[DEBUG] decrypted: {xml_msg[:300]}")
 
     root = ET.fromstring(xml_msg)
     msg_type = root.find("MsgType").text
     msg_id = root.find("MsgId").text if root.find("MsgId") is not None else ""
+    print(f"[DEBUG] msg_type={msg_type} msg_id={msg_id}")
 
     # 去重
     if msg_id in SEEN_MESSAGES:
@@ -175,10 +186,12 @@ def webhook():
 
     # 只处理文本消息
     if msg_type != "text":
+        print(f"[DEBUG] skip non-text msg: {msg_type}")
         return "ok"
 
     content = root.find("Content").text or ""
     from_user = root.find("FromUserName").text or ""
+    print(f"[DEBUG] content={content} from={from_user}")
 
     # 匹配问答
     answer = match_qa(content)
