@@ -21,9 +21,7 @@ BASE_URL = "https://qyapi.weixin.qq.com/cgi-bin"
 
 # ====== 加载问答表（复用飞书版 qa/ 目录）======
 def load_qa():
-    qa_dir = os.path.join(os.path.dirname(__file__), "..", "bot", "qa")
-    if not os.path.exists(qa_dir):
-        qa_dir = os.path.join(os.path.dirname(__file__), "qa")
+    qa_dir = os.path.join(os.path.dirname(__file__), "qa")
     qa_list = []
     for filename in sorted(os.listdir(qa_dir)):
         if filename.endswith(".json"):
