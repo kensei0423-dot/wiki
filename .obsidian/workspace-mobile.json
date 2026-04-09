@@ -170,6 +170,10 @@
   },
   "active": "8f0df34114a9bc9a",
   "lastOpenFiles": [
+    "bot/requirements.txt",
+    "bot/qa.json",
+    "bot/feishu_bot.py",
+    "bot",
     "README.md",
     "CLAUDE.md"
   ]
