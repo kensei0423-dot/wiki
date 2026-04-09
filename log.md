@@ -21,3 +21,14 @@
 **更新页面**:
 - negative-testing.md — 添加交叉引用
 - index.md — 索引新增条目
+
+## [2026-04-09] ingest | PayPal One-Time Payments 最佳实践
+
+摄入 PayPal 官方一次性支付最佳实践文档。
+
+**新增页面**:
+- one-time-payments.md — 按钮放置策略、合规要求、转化优化、Pay Now 流程、Shipping 回调、关键 API 参数
+
+**更新页面**:
+- paypal-checkout-integration.md — 添加交叉引用
+- index.md — 索引新增条目

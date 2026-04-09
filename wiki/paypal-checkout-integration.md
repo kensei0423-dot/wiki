@@ -152,3 +152,4 @@ POST /v2/checkout/orders/{order_id}/capture
 ## 相关页面
 
 - [[negative-testing]] — Sandbox 错误模拟测试
+- [[one-time-payments]] — 一次性支付最佳实践
