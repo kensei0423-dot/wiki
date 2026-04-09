@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
-                "mode": "source",
+                "file": "wiki/negative-testing.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "negative-testing"
             }
           }
         ]
@@ -112,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "README.md",
+            "file": "wiki/paypal-checkout-integration.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -170,11 +170,16 @@
   },
   "active": "8f0df34114a9bc9a",
   "lastOpenFiles": [
+    "wiki/paypal-checkout-integration.md",
+    "CLAUDE.md",
+    "wiki/negative-testing.md",
+    "wiki/one-time-payments.md",
+    "raw/paypal-checkout-integration.md",
+    "README.md",
+    "raw/one-time-payments.md",
     "bot/requirements.txt",
     "bot/qa.json",
     "bot/feishu_bot.py",
-    "bot",
-    "README.md",
-    "CLAUDE.md"
+    "bot"
   ]
 }
