@@ -1,0 +1,14 @@
+[
+  {
+    "keywords": ["错误", "报错", "error", "失败"],
+    "answer": "PayPal 错误分 7 大类：\n1. 服务器错误（INTERNAL_SERVER_ERROR）→ 重试\n2. 认证错误（NOT_AUTHORIZED）→ 检查凭证\n3. 买家账户错误（INSTRUMENT_DECLINED）→ 换支付方式\n4. 商户账户错误 → 检查配置\n5. 风控错误（TRANSACTION_REFUSED）→ 联系 PayPal\n6. 订单状态错误（ORDER_NOT_APPROVED）→ 等待用户批准\n7. 参数验证错误 → 检查请求参数\n\nCreate 阶段 120+ 错误码，Capture 阶段 80+ 错误码。"
+  },
+  {
+    "keywords": ["测试", "test", "模拟错误"],
+    "answer": "测试页面 /test 支持 7 个错误场景：\n\nCreate Order：\n1. INTERNAL_SERVER_ERROR（Mock Header）\n2. NOT_AUTHORIZED（无效 token）\n\nCapture Order：\n3. INTERNAL_SERVER_ERROR（Mock Header）\n4. RESOURCE_NOT_FOUND（无效 order ID）\n5. INSTRUMENT_DECLINED（Mock Header）\n6. TRANSACTION_REFUSED（Mock Header）\n7. ORDER_NOT_APPROVED（未批准订单）\n\n触发方式：Mock Header 或 Natural Trigger。"
+  },
+  {
+    "keywords": ["SDK", "PayPal SDK", "v6", "classic"],
+    "answer": "两种 PayPal SDK：\n\nSDK v6（主用）：\n- 自定义 HTML 按钮，headless 模式\n- 支持 vault-with-purchase\n- 适合品牌一致性要求高的场景\n\nClassic SDK：\n- PayPal 标准金色按钮\n- 通过 id_token 识别回头客\n- 适合快速集成"
+  }
+]

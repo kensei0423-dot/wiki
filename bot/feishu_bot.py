@@ -14,9 +14,17 @@ APP_SECRET = os.environ.get("FEISHU_APP_SECRET", "IUtOH2gzsfmz9xaqwdXfOflC5727Su
 BASE_URL = "https://open.feishu.cn/open-apis"
 
 # ====== 加载问答表 ======
-QA_PATH = os.path.join(os.path.dirname(__file__), "qa.json")
-with open(QA_PATH, "r", encoding="utf-8") as f:
-    QA_LIST = json.load(f)
+def load_qa():
+    """从 qa/ 目录加载所有 JSON 文件，合并为一个列表"""
+    qa_dir = os.path.join(os.path.dirname(__file__), "qa")
+    qa_list = []
+    for filename in sorted(os.listdir(qa_dir)):
+        if filename.endswith(".json"):
+            with open(os.path.join(qa_dir, filename), "r", encoding="utf-8") as f:
+                qa_list.extend(json.load(f))
+    return qa_list
+
+QA_LIST = load_qa()
 
 DEFAULT_REPLY = "暂无相关信息，请联系管理员。"
 
@@ -133,4 +141,5 @@ def webhook():
 if __name__ == "__main__":
     print(f"已加载 {len(QA_LIST)} 条问答")
     print("飞书机器人启动，监听端口 9000...")
-    app.run(host="0.0.0.0", port=9001)
+    port = int(os.environ.get("PORT", 9001))
+    app.run(host="0.0.0.0", port=port)

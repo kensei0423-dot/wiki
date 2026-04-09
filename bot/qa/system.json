@@ -1,0 +1,30 @@
+[
+  {
+    "keywords": ["注册", "登录", "账号", "密码"],
+    "answer": "用户系统：\n- 注册：用户名 3-20 字符，密码 6+ 字符\n- 登录：Cookie-based session，24 小时有效\n- 测试账户：test1/abc123，test2/abc123\n- 端点：POST /auth/register, POST /auth/login, POST /auth/logout, GET /auth/me"
+  },
+  {
+    "keywords": ["架构", "技术栈", "怎么搭建的"],
+    "answer": "三层架构：\n- 前端：原生 HTML/CSS/JS + PayPal JS SDK v6\n- 后端：Node.js + Express，端口 3777\n- 支付：PayPal Orders API v2（sandbox）\n- 数据：内存 + JSON 文件持久化（users.json, order-stats.json）"
+  },
+  {
+    "keywords": ["API", "接口", "端点", "endpoint"],
+    "answer": "主要 API 端点：\n- 认证：/auth/register, /auth/login, /auth/logout, /auth/me\n- 支付：/api/orders (创建), /api/orders/:id/capture (捕获)\n- Vault：/api/vault/payment-tokens (查看/删除)\n- 管理：/api/admin/users, /api/admin/order-stats, /api/admin/disputes\n- 测试：/api/test/create-order, /api/test/capture-order\n\n共 30+ 个端点，详见 api-reference。"
+  },
+  {
+    "keywords": ["管理后台", "admin", "管理员"],
+    "answer": "管理后台 /admin 功能：\n\n用户管理：\n- 搜索（用户名/PayPal邮箱/Token ID/Customer ID）\n- 用户详情（PayPal信息、已保存方式、交易记录）\n\n争议管理：\n- 按 Order ID / Case ID / Transaction ID 查询\n- 争议详情弹窗（状态、原因、消息记录）\n- 自动匹配本地用户\n\n统计栏：总用户数、总收入、活跃VIP、已保存支付方式。"
+  },
+  {
+    "keywords": ["争议", "dispute", "纠纷", "退款"],
+    "answer": "争议管理功能：\n- 三种搜索：按 Order ID、Case ID（PP-D-xxxxx）、Transaction ID\n- 使用 PayPal Customer Disputes API v1\n- 自动通过 captureId 与本地用户交叉匹配\n- 支持日期和状态过滤\n- Sandbox 环境下 end_time 过滤需本地补充处理"
+  },
+  {
+    "keywords": ["订单统计", "成功率", "order stats"],
+    "answer": "当前订单统计：\n- 发起：140 笔\n- 成功：97 笔（69.3%）\n- 失败：22 笔（15.7%）\n- 放弃/待处理：21 笔（15%）\n\n去重机制：PayPal-Request-Id + seenRequestIds Map，30 分钟窗口。"
+  },
+  {
+    "keywords": ["端口", "启动", "运行", "怎么跑"],
+    "answer": "启动方式：\n1. cd reelshort/\n2. npm install\n3. node server.js\n4. 浏览器打开 http://localhost:3777\n\n页面：\n- / → 商城\n- /login → 登录\n- /profile → 个人中心\n- /admin → 管理后台\n- /test → 测试页"
+  }
+]
