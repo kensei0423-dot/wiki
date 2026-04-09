@@ -1,5 +1,17 @@
 # Wiki 索引
 
-> 知识库（空）
+> PayPal 支付集成知识库
 
-暂无页面。添加新的原始资料后，使用 LLM 摄入生成 wiki 页面。
+## Wiki 页面
+
+### 集成
+
+| 页面 | 说明 |
+|------|------|
+| [[wiki/paypal-checkout-integration]] | Checkout 完整集成：前端按钮、后端 API、App Switch、错误处理、测试上线 |
+
+### 测试
+
+| 页面 | 说明 |
+|------|------|
+| [[wiki/negative-testing]] | Sandbox 错误模拟测试：启用方法、Mock Header、Test Values |
